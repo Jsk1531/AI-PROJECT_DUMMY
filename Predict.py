@@ -20,4 +20,4 @@ def train_model(df,X,y):
         "Error (Actual - Predicted)": y_test.to_numpy() - y_pred
     })
     print(comparison.head(10))
-    return df,model,y_pred,comparison
+    return df,model,y_test,y_pred,comparison
