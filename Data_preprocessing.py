@@ -55,7 +55,7 @@ def explore(df):
     import numpy as np
     numeric_columns = df.select_dtypes(include=np.number).columns.tolist()
     print("Numeric columns:", numeric_columns)
-    column_to_plot = numeric_columns[-1]
+    column_to_plot = "price"
 
     plt.figure(figsize=(9,5))
     plt.hist(df[column_to_plot].dropna(), bins=20,range=(0,150000), edgecolor="black")
@@ -64,8 +64,8 @@ def explore(df):
 
     plt.grid(alpha=0.25)
     plt.show()
-    feature_for_plot = numeric_columns[1]
-    target_for_plot = numeric_columns[-1]  # Check that this is actually the price column!
+    feature_for_plot = "milage"
+    target_for_plot = "price"  
     df_normal=df[df[target_for_plot]<=150000]
     plt.figure(figsize=(8, 5))
     plt.scatter(df_normal[feature_for_plot], df_normal[target_for_plot], alpha=0.65)
